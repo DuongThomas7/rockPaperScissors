@@ -1,6 +1,3 @@
-let playerScore = 0;
-let computerScore = 0;
-
 function computerPlay(){
     let randomize = Math.floor(Math.random() * 100)
     console.log(randomize);
@@ -18,8 +15,6 @@ function computerPlay(){
 }
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
-
     switch (true){
         
         case (playerSelection == "rock"):
@@ -90,4 +85,22 @@ function game(){
 
 }
 
-game();
+let playerScore = 0;
+let computerScore = 0;
+
+const rock = document.getElementById('rock');
+const paper = document.getElementById('paper');
+const scissors = document.getElementById('scissors');
+
+rock.addEventListener('click', () => {
+    console.log(playRound("rock", computerPlay()));
+})
+
+paper.addEventListener('click', () => {
+    console.log(playRound("paper", computerPlay()));
+})
+
+scissors.addEventListener('click', () => {
+    console.log(playRound("scissors", computerPlay()));
+})
+//game();
