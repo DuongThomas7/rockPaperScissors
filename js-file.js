@@ -66,23 +66,25 @@ function playRound(playerSelection, computerSelection) {
 
 
 
-function game(){
-    let player = prompt("Rock, Paper or Scissors?");
-    const computer = computerPlay();
-    console.log(playRound(player, computer));
+function checkWinner(){
+    if (playerScore == 5 || computerScore == 5){
+        if (playerScore > computerScore){
+            reports.textContent= `You won with ${playerScore} points compared to the computer's ${computerScore} points!`;
+            alert("YOU WON!");
+        }
 
-    if (playerScore > computerScore){
-        console.log(`You won with ${playerScore} points compared to the computer's ${computerScore} points!`);
+        else if (computerScore > playerScore){
+            reports.textContent = `You lost with ${playerScore} points compared to the computer's ${computerScore} points`;
+            alert("YOU LOST!");
+        }
+
+        else {
+            reports.textContent = `Nobody won\n Player Points: ${playerScore}\n Computer Points: ${computerScore}`;
+            alert("DID THIS OCCUR");
+        }
+        playerScore = 0;
+        computerScore = 0;
     }
-
-    else if (computerScore > playerScore){
-        console.log(`You lost with ${playerScore} points compared to the computer's ${computerScore} points`);
-    }
-
-    else {
-        console.log(`Nobody won\n Player Points: ${playerScore}\n Computer Points: ${computerScore}`);
-    }
-
 }
 
 let playerScore = 0;
@@ -99,18 +101,21 @@ rock.addEventListener('click', () => {
     reports.textContent = playRound("rock", computerPlay());
     playerScoreCounter.textContent = `Player Points: ${playerScore}`;
     computerScoreCounter.textContent = `Computer Points: ${computerScore}`;
+    checkWinner();
 })
 
 paper.addEventListener('click', () => {
     reports.textContent = playRound("paper", computerPlay());
     playerScoreCounter.textContent = `Player Points: ${playerScore}`;
     computerScoreCounter.textContent = `Computer Points: ${computerScore}`;
+    checkWinner();
 })
 
 scissors.addEventListener('click', () => {
     reports.textContent = playRound("scissors", computerPlay());
     playerScoreCounter.textContent = `Player Points: ${playerScore}`;
     computerScoreCounter.textContent = `Computer Points: ${computerScore}`;
+    checkWinner();
 })
 
 
