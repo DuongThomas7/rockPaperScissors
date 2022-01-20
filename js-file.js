@@ -72,11 +72,9 @@ function playRound(playerSelection, computerSelection) {
 
 
 function game(){
-    for (let i = 0; i < 5; i++){
-        let player = prompt("Rock, Paper or Scissors?");
-        const computer = computerPlay();
-        console.log(playRound(player, computer));
-    }
+    let player = prompt("Rock, Paper or Scissors?");
+    const computer = computerPlay();
+    console.log(playRound(player, computer));
 
     if (playerScore > computerScore){
         console.log(`You won with ${playerScore} points compared to the computer's ${computerScore} points!`);
