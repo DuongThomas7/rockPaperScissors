@@ -91,16 +91,22 @@ let computerScore = 0;
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
+const scoreCounter = document.querySelector('p');
 
 rock.addEventListener('click', () => {
     console.log(playRound("rock", computerPlay()));
+    scoreCounter.textContent = `Player Points: ${playerScore} \n Computer Points: ${computerScore}`;
 })
 
 paper.addEventListener('click', () => {
     console.log(playRound("paper", computerPlay()));
+    scoreCounter.textContent = `Player Points: ${playerScore} \n Computer Points: ${computerScore}`;
 })
 
 scissors.addEventListener('click', () => {
     console.log(playRound("scissors", computerPlay()));
+    scoreCounter.textContent = `Player Points: ${playerScore} \n Computer Points: ${computerScore}`;
 })
+
+
 //game();
