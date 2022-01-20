@@ -91,21 +91,26 @@ let computerScore = 0;
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
-const scoreCounter = document.querySelector('p');
+const playerScoreCounter = document.getElementById('player');
+const computerScoreCounter = document.getElementById('computer');
+const reports = document.querySelector('p');
 
 rock.addEventListener('click', () => {
-    console.log(playRound("rock", computerPlay()));
-    scoreCounter.textContent = `Player Points: ${playerScore} \n Computer Points: ${computerScore}`;
+    reports.textContent = playRound("rock", computerPlay());
+    playerScoreCounter.textContent = `Player Points: ${playerScore}`;
+    computerScoreCounter.textContent = `Computer Points: ${computerScore}`;
 })
 
 paper.addEventListener('click', () => {
-    console.log(playRound("paper", computerPlay()));
-    scoreCounter.textContent = `Player Points: ${playerScore} \n Computer Points: ${computerScore}`;
+    reports.textContent = playRound("paper", computerPlay());
+    playerScoreCounter.textContent = `Player Points: ${playerScore}`;
+    computerScoreCounter.textContent = `Computer Points: ${computerScore}`;
 })
 
 scissors.addEventListener('click', () => {
-    console.log(playRound("scissors", computerPlay()));
-    scoreCounter.textContent = `Player Points: ${playerScore} \n Computer Points: ${computerScore}`;
+    reports.textContent = playRound("scissors", computerPlay());
+    playerScoreCounter.textContent = `Player Points: ${playerScore}`;
+    computerScoreCounter.textContent = `Computer Points: ${computerScore}`;
 })
 
 
